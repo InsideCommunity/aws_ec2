@@ -17,7 +17,7 @@ data "aws_subnet" "ec2_subnet" {
 
 // Embeded Security Group
 resource "aws_security_group" "ec2_sg" {
-  description = "Security Group for RDS ${var.ec2_security_group_name}"
+  description = "Security Group for EC2 ${var.ec2_security_group_name}"
   name        = var.ec2_security_group_name
   vpc_id      = data.aws_vpc.ec2_vpc.id
   tags = merge(
